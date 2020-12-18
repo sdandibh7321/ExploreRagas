@@ -1,5 +1,5 @@
 import random, copy
-from alapanaLists import *
+from alapanaSupport import *
 from htmlTemplates import *
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
@@ -21,7 +21,7 @@ def shuffle(alas):
 
 # GLOBALS ###########################
 shuffledAlapanas = shuffle(alapanasDict)
-tenAlapanas = shuffledAlapanas[0:4]
+tenAlapanas = shuffledAlapanas[0:10]
 times = 0
 lnk = ""
 numCorrect = 0
@@ -37,7 +37,7 @@ def landingPage():
     global numCorrect
     # reset everything
     shuffledAlapanas = shuffle(alapanasDict)
-    tenAlapanas = shuffledAlapanas[0:4]
+    tenAlapanas = shuffledAlapanas[0:10]
     times = 0
     lnk = ""
     numCorrect = 0
@@ -51,7 +51,7 @@ def alapanaQuiz():
     global tenAlapanas
     global lnk
     global numCorrect
-    if times < 3:
+    if times < 10:
         a = tenAlapanas[times]
         times = times + 1
         lnk = a
