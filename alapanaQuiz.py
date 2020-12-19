@@ -1,6 +1,7 @@
 import random, copy
 from alapanaSupport import *
-from htmlTemplates import *
+from htmlTemplatesQuiz import *
+from htmlTemplatesZen import *
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from string import Template
@@ -21,7 +22,7 @@ def shuffle(alas):
 
 # GLOBALS ###########################
 shuffledAlapanas = shuffle(alapanasDict)
-tenAlapanas = shuffledAlapanas[0:10]
+tenAlapanas = shuffledAlapanas[0:5]
 times = 0
 lnk = ""
 numCorrect = 0
@@ -29,7 +30,27 @@ numCorrect = 0
 
 @app.route('/')
 @app.route('/return', methods=['POST'])
-def landingPage():
+def startPage():
+    return render_template("main.html")
+
+# ZEN -------------------------------------
+@app.route('/zen', methods=['POST'])
+def zenPage():
+    return render_template("zen.html")
+
+
+@app.route('/next', methods=['POST'])
+def nextOne():
+    global shuffledAlapanas
+    a = random.choice(shuffledAlapanas)
+    raga = myRagaDict[alapanasDict[a]]
+    return(HTML_TEMPLATE_C.substitute(alap=a, rag=raga))
+
+
+# QUIZ ------------------------------------
+@app.route('/quiz', methods=['POST'])
+@app.route('/again', methods=['POST'])
+def ragaPage():
     global times
     global shuffledAlapanas
     global tenAlapanas
@@ -37,11 +58,11 @@ def landingPage():
     global numCorrect
     # reset everything
     shuffledAlapanas = shuffle(alapanasDict)
-    tenAlapanas = shuffledAlapanas[0:10]
+    tenAlapanas = shuffledAlapanas[0:5]
     times = 0
     lnk = ""
     numCorrect = 0
-    return render_template('main.html')
+    return render_template('quiz.html')
 
 
 @app.route('/alapanaQuiz', methods=['POST'])
@@ -51,7 +72,7 @@ def alapanaQuiz():
     global tenAlapanas
     global lnk
     global numCorrect
-    if times < 10:
+    if times < 5:
         a = tenAlapanas[times]
         times = times + 1
         lnk = a
