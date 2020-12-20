@@ -102,7 +102,7 @@ HTML_TEMPLATE_C = Template("""
         <div class="card">
         <p></p>
           <p class="margin">Click play: </p>
-              <iframe name="sndtrk" width="250" height="150" src= ${alap} frameborder="0"></iframe>
+              <iframe name="sndtrk" width="230" height="150" src= ${alap} frameborder="0"></iframe>
           <p></p>
 
           <form action='/next' method='POST'>
