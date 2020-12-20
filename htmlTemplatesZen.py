@@ -76,7 +76,7 @@ HTML_TEMPLATE_C = Template("""
         border-radius: 5px;
         background-color: #ffffff; /* White */
         color: #555555;
-        max-width: 70%;
+        max-width: 75%;
         overflow: hidden;
         height: 350;
         padding-bottom: 1%;
@@ -102,7 +102,7 @@ HTML_TEMPLATE_C = Template("""
         <div class="card">
         <p></p>
           <p class="margin">Click play: </p>
-              <iframe name="sndtrk" width="230" height="150" src= ${alap} frameborder="0"></iframe>
+              <iframe name="sndtrk" width="240" height="150" src= ${alap} frameborder="0"></iframe>
           <p></p>
 
           <form action='/next' method='POST'>
