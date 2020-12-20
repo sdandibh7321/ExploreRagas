@@ -28,7 +28,7 @@
     color: #ffffff;
   }
   .bg-2 {
-    background-color: #474e5d; /* Dark Blue */
+    background-color: #474e5d; /* Blue */
     color: #ffffff;
   }
   .bg-3 {
@@ -47,6 +47,10 @@
     background-color: #6e181b; /* Red */
     color: #fff;
   }
+  .bg-7 {
+    background-color: #1e1d3d; /* dark blue */
+    color: #fff;
+  }
   .container-fluid {
     padding-top: 70px;
     padding-bottom: 70px;
@@ -55,9 +59,6 @@
   }
 
   #play {
-    color:black;
-  }
-  #zen {
     color:black;
   }
 
@@ -99,32 +100,28 @@
 <nav class="navbar navbar-default">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">Main</a>
+      <a class="navbar-brand" href="#">Raga Quiz</a>
     </div>
   </div>
 </nav>
 
-  <div class="container-fluid bg-6 text-center">
-    <h1>WELCOME</h1>
+<form action='/alapanaQuiz' method='POST'>
+  <div class="container-fluid bg-7 text-center">
+    <h1>RAGA QUIZ</h1>
     <p></p>
-    <h4>Let's explore some ragas!</h4>
-    <p></p>
-    <h3>Play the Raga Quiz:</h3>
-    <form action='/quiz' method='POST'>
-    <input type="submit" id="play" value="Play"/>
-    </form>
-
-    <p></p>
-    <form action='/zen' method='POST'>
-    <h3>Listen to random alapanas in Zen Mode:</h3>
-    <input type="submit" id="zen" value="Listen"/>
-    </form>
-
+    <h3>Let's play a raga quiz!</h3>
+    <p>You will be given a set of 10 alapanas;</p>
+    <p>for each one, click play, listen closely, </p>
+    <p>and enter the name of the raga you think it is.</p>
+    <p>You will see your score and the correct answers as you go.</p>
+    <input type="submit" id="play" value="Play!"/>
   </div>
+
+</form>
 
 <!-- Footer -->
 <footer class="container-fluid bg-4 text-center">
-  <p>Samapriya Dandibhotla</p>
+  <p>Quiz by Samapriya Dandibhotla</p>
 </footer>
 
 </body>
