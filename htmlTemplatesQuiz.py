@@ -78,7 +78,7 @@ HTML_TEMPLATE_Q = Template("""
         border-radius: 5px;
         background-color: #ffffff; /* White */
         color: #555555;
-        max-width: 60%;
+        max-width: 70%;
         overflow: hidden;
         height: 250px;
         padding-bottom: 1%;
@@ -107,7 +107,7 @@ HTML_TEMPLATE_Q = Template("""
           <p class="margin">Click play: </p>
               <iframe name="sndtrk" width="60" height="30" src= ${alap} frameborder="0"></iframe>
           <label for="ansField">Answer here: </label>
-          <textarea id="ansField" name="answerField" rows="1" cols="15"></textarea>
+          <textarea id="ansField" name="answerField" rows="1" cols="13"></textarea>
           <p></p>
           <input type="submit" id="submit" value="Submit"/>
         </div>
