@@ -5,6 +5,7 @@ from htmlTemplatesZen import *
 from flask import Flask, render_template, request
 from flask_bootstrap import Bootstrap
 from string import Template
+from fuzzywuzzy import fuzz
 
 app = Flask(__name__)
 
@@ -80,14 +81,21 @@ def alapanaQuiz():
     else:
         return(HTML_TEMPLATE_DONE.substitute(num=numCorrect))
 
-
 @app.route('/evaluate', methods=['POST'])
 def is_correct():
     global lnk
     global numCorrect
     answered = request.form['answerField']
     raga = myRagaDict[alapanasDict[lnk]]
-    if raga == answered:
+    rat = fuzz.ratio(answered.lower(), raga.lower()) #for approximate match (spelling differences)
+    if (rat > 70): #partial match, but shouldn't allow similar ragams (saveri/asavari)
+        if (raga == "Asaveri"):
+            answered = answered.lower()
+            if (answered[0] != "a"):
+                return(HTML_TEMPLATE_A.substitute(result="INCORRECT", num=numCorrect, rag=raga))
+            else:
+                numCorrect = numCorrect + 1
+                return(HTML_TEMPLATE_A.substitute(result="CORRECT!", num=numCorrect, rag=raga))
         numCorrect = numCorrect + 1
         return(HTML_TEMPLATE_A.substitute(result="CORRECT!", num=numCorrect, rag=raga))
     else:
