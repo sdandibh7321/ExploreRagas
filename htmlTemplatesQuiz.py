@@ -226,7 +226,7 @@ HTML_TEMPLATE_A = Template("""
       <div class="container-fluid bg-2 text-center">
         <h1 class="margin">${result}</h1>
         <p></p>
-        <h3>The ragam was ${rag}</h3>
+        <h3>The raga was ${rag}</h3>
         <p></p>
         <h4>${num} correct</h4>
         <input type="submit" id="next" value="Next"/>
