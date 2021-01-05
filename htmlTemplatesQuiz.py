@@ -12,10 +12,16 @@ HTML_TEMPLATE_Q = Template("""
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <style>
+
+      html,body {
+        height: 100%;
+      }
+
       body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
         color: #f5f6f7;
+        height: 100%;
       }
       p {
         font-size: 16px;
@@ -44,8 +50,14 @@ HTML_TEMPLATE_Q = Template("""
         padding-bottom: 70px;
         overflow: hidden;
         max-width: 100%;
-        max-height: 100%
+      }
 
+      .container-fluid-footer {
+        padding-top: 50px;
+        padding-bottom: 60px;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       #submit {
@@ -117,8 +129,7 @@ HTML_TEMPLATE_Q = Template("""
     </form>
 
     <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-      <p>Samapriya Dandibhotla</p>
+    <footer class="container-fluid-footer bg-4 text-center">
     </footer>
 
     </body>
@@ -140,10 +151,15 @@ HTML_TEMPLATE_A = Template("""
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <style>
+      html,body {
+        height: 100%;
+      }
+
       body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
         color: #f5f6f7;
+        height: 100%;
       }
       p {
         font-size: 16px;
@@ -172,6 +188,14 @@ HTML_TEMPLATE_A = Template("""
         padding-bottom: 70px;
         overflow: hidden;
         max-width: 100%;
+      }
+
+      .container-fluid-footer {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       #next {
@@ -237,8 +261,7 @@ HTML_TEMPLATE_A = Template("""
     </form>
 
     <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-      <p>Samapriya Dandibhotla</p>
+    <footer class="container-fluid-footer bg-4 text-center">
     </footer>
 
     </body>
@@ -258,10 +281,14 @@ HTML_TEMPLATE_DONE = Template("""
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <style>
+      html,body {
+        height: 100%;
+      }
       body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
         color: #f5f6f7;
+        height: 100%;
       }
       p {
         font-size: 16px;
@@ -303,6 +330,15 @@ HTML_TEMPLATE_DONE = Template("""
         padding-bottom: 70px;
         overflow: hidden;
         max-width: 100%;
+      }
+
+
+      .container-fluid-footer {
+        padding-top: 70px;
+        padding-bottom: 60px;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       #playAgain, #exit {
@@ -371,8 +407,7 @@ HTML_TEMPLATE_DONE = Template("""
       </div>
 
     <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-      <p>Samapriya Dandibhotla</p>
+    <footer class="container-fluid-footer bg-4 text-center">
     </footer>
 
     </body>

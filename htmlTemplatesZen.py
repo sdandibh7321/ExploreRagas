@@ -12,10 +12,15 @@ HTML_TEMPLATE_C = Template("""
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
       <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
       <style>
+      html,body {
+        height: 100%;
+      }
+
       body {
         font: 20px Montserrat, sans-serif;
         line-height: 1.8;
         color: #f5f6f7;
+        height: 100%;
       }
       p {
         font-size: 16px;
@@ -45,6 +50,15 @@ HTML_TEMPLATE_C = Template("""
         overflow: hidden;
         max-width: 100%;
         max-height: 100%
+      }
+
+
+      .container-fluid-footer {
+        padding-top: 30px;
+        padding-bottom: 30px;
+        overflow: hidden;
+        max-width: 100%;
+        max-height: 100%;
       }
 
       #next, #menu {
@@ -108,7 +122,7 @@ HTML_TEMPLATE_C = Template("""
           <form action='/next' method='POST'>
           <input type="submit" id="next" value="Next"/>
           </form>
-
+          <p></p>
           <form action='/return' method='POST'>
           <input type="submit" id="menu" value="Exit"/>
           </form>
@@ -117,8 +131,7 @@ HTML_TEMPLATE_C = Template("""
 
 
     <!-- Footer -->
-    <footer class="container-fluid bg-4 text-center">
-      <p>Samapriya Dandibhotla</p>
+    <footer class="container-fluid-footer bg-4 text-center">
     </footer>
 
     </body>
