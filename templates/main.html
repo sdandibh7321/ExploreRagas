@@ -10,10 +10,15 @@
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
+  html,body {
+    height: 100%;
+  }
+
   body {
     font: 20px Montserrat, sans-serif;
     line-height: 1.8;
     color: #f5f6f7;
+    height: 100%;
   }
 
   p {
@@ -52,6 +57,14 @@
     padding-bottom: 70px;
     overflow: hidden;
     max-width: 100%;
+  }
+
+  .container-fluid-footer {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    overflow: hidden;
+    max-width: 100%;
+    max-height: 100%;
   }
 
   #play {
@@ -116,15 +129,16 @@
 
     <p></p>
     <form action='/zen' method='POST'>
-    <h3>Listen to random alapanas in Zen Mode:</h3>
+    <h3>Listen to Alapanas in Zen Mode:</h3>
     <input type="submit" id="zen" value="Listen"/>
     </form>
 
   </div>
 
 <!-- Footer -->
-<footer class="container-fluid bg-4 text-center">
-  <p>Samapriya Dandibhotla</p>
+<footer class="container-fluid-footer bg-4 text-center">
+  <p>Created by Samapriya Dandibhotla</p>
+  <p>Inspiration and Alapanas from <a href="https://ramanarunachalam.github.io/Music/Carnatic/carnatic.html">this amazing collection</a>: Check it out!</p>
 </footer>
 
 </body>
